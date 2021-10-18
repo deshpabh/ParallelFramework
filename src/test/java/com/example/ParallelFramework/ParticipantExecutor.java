@@ -1,7 +1,6 @@
 package com.example.ParallelFramework;
 
 import com.example.ParallelFramework.context.AbstractContext;
-import com.example.ParallelFramework.context.ExecutorType;
 import com.example.ParallelFramework.model.ParticipantMockModel;
 import com.example.ParallelFramework.parallelclasses.AbstractExecutor;
 

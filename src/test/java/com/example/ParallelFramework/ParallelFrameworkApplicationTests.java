@@ -16,17 +16,15 @@ import java.util.concurrent.Future;
 @SpringBootTest
 class ParallelFrameworkApplicationTests {
 
-	private volatile DemoContext demoContext;
+	private static DemoContext demoContext;
 
 	@Test
-	void contextLoads() {
+	void serialContextLoads() {
 		demoContext = new DemoContext();
 		demoContext.setData(new ParticipantMockModel(null,null,null));
 		ParticipantExecutor participantExecutor = new ParticipantExecutor(demoContext);
 		try {
-			new ParallelCoordinator(ExecutorType.FIXED_THREAD_POOL).executeTasksParallely(Arrays.asList(participantExecutor));
-			//Not working
-		//	Future future = new ParallelCoordinator(ExecutorType.FIXED_THREAD_POOL).executeSingleTask(participantExecutor);
+			participantExecutor.call();
 		}catch (Exception e){
 
 		}
