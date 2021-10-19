@@ -8,9 +8,9 @@
 		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
+	<groupId>com.parallelframework</groupId>
 	<artifactId>ParallelFramework</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.00</version>
 	<name>ParallelFramework</name>
 	<description>Framework For Parallel Process Runs</description>
 	<properties>

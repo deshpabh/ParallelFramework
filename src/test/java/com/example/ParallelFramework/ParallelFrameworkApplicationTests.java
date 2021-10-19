@@ -2,6 +2,7 @@ package com.example.ParallelFramework;
 
 import com.example.ParallelFramework.context.ExecutorType;
 import com.example.ParallelFramework.coordinator.ParallelCoordinator;
+import com.example.ParallelFramework.coordinator.SerialCoordinator;
 import com.example.ParallelFramework.model.DemoContext;
 import com.example.ParallelFramework.model.ParticipantMockModel;
 import org.junit.jupiter.api.Test;
@@ -19,12 +20,12 @@ class ParallelFrameworkApplicationTests {
 	private static DemoContext demoContext;
 
 	@Test
-	void serialContextLoads() {
+	void serialContextLoadsTest() {
 		demoContext = new DemoContext();
 		demoContext.setData(new ParticipantMockModel(null,null,null));
 		ParticipantExecutor participantExecutor = new ParticipantExecutor(demoContext);
 		try {
-			participantExecutor.call();
+			new SerialCoordinator(Arrays.asList(participantExecutor));
 		}catch (Exception e){
 
 		}

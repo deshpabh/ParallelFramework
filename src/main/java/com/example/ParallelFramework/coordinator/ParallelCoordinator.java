@@ -37,10 +37,4 @@ public class ParallelCoordinator {
       return executor.invokeAll(abstractContextList);
     }
 
-    //Not working thread works in async with main. First Assertion happens and then execution takes place.
-    private Future executeSingleTask(AbstractExecutor abstractExecutor){
-        Future future = executor.submit(abstractExecutor);
-        abstractExecutor.abstractContext.setFuture(future);
-        return future;
-    }
 }
